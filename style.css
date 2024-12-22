@@ -1,0 +1,82 @@
+/* Corps de la page */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #333;
+    color: white;
+}
+
+/* Conteneur principal */
+#container {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: #f7f7f7;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Style des mots du message */
+#message p span {
+    font-size: 18px;
+    color: #000;
+    display: inline-block;
+    opacity: 0; /* Invisible par défaut */
+    animation: appear 1s forwards ease; /* Animation contrôlée en JS */
+}
+
+/* Animation pour l'apparition des mots */
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateY(10px); /* Montée légère */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation pour la disparition des mots */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px); /* Montée légère */
+    }
+}
+
+/* Conteneur pour les flammes */
+#flames {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background-image: url('flames.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0; /* Invisible par défaut */
+    pointer-events: none;
+    animation: flamesEffect 5s forwards ease;
+}
+
+/* Animation pour les flammes */
+@keyframes flamesEffect {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
